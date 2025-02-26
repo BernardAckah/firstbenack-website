@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include("includes/heads") %>
+<body>
+<%- include("includes/header") %>
+    <main>
+        <% if (posts.length == 0){ %>
+        <h4>Hello <%= user.username %> you do not have a post</h4>
+        <% } else { %>
+         <h4>Hello <%= user.username %> here are your Post</h4>
+        <% } %>
+       <ul>
+        <% posts.forEach(post => {%>
+            <li>
+                <a href="/post/<%= post.id %>"><%= post.title %></a> 
+                
+            </li>
+        <%}) %>
+       </ul>
+    </main>
+    <%- include("includes/footer") %>
+</body>
+</html>
